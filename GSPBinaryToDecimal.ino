@@ -3,7 +3,7 @@
 LiquidCrystal_I2C lcd(0x27,16,2);
   //button degiskenleri
   #define Button1 7
-  #define Button2 8        //OYUN 1 kodlari tamam
+  #define Button2 8        
   #define Button3 9
   #define Button4 10
 
@@ -106,7 +106,8 @@ LiquidCrystal_I2C lcd(0x27,16,2);
     
     //combined degiskeninin icindeki degerin esit olmasi durumunda yapilacaklar.
     if(strcmp(combined, "0000") == 0){lcd.setCursor(6, 1); lcd.print("0   ");} 
-    else if(strcmp(combined, "0001") == 0){lcd.setCursor(6, 1); lcd.print("1   ");} //3 karakter bosluk var 10 ve sonrasi degerlerinden buraya gecince hata olmamasi icin
+     //3 karakter bosluk var 10 ve sonrasi degerlerinden buraya gecince hata olmamasi icin
+    else if(strcmp(combined, "0001") == 0){lcd.setCursor(6, 1); lcd.print("1   ");}
     else if(strcmp(combined, "0010") == 0){lcd.setCursor(6, 1); lcd.print("2   ");} 
     else if(strcmp(combined, "0011") == 0){lcd.setCursor(6, 1); lcd.print("3   ");} 
     else if(strcmp(combined, "0100") == 0){lcd.setCursor(6, 1); lcd.print("4   ");} 
@@ -122,25 +123,3 @@ LiquidCrystal_I2C lcd(0x27,16,2);
     else if(strcmp(combined, "1110") == 0){lcd.setCursor(6, 1); lcd.print("14-E");} 
     else if(strcmp(combined, "1111") == 0){lcd.setCursor(6, 1); lcd.print("15-F");} 
   }
-  /*
-  #include <LiquidCrystal_I2C.h>
-
-LiquidCrystal_I2C lcd(0x27,16,2); // Bu kodu kullanırken ekranda yazı çıkmaz ise 0x27 yerine 0x3f yazınız !!
-void setup() {
-  lcd.begin();
-
-}
-
-void loop(){
-int i;
-lcd.setCursor(3,0); // İlk satırın başlangıç noktası
-lcd.print("ROBOLINK"); 
-for(i=0; i<17; i++)
-{
-  lcd.setCursor(i,1); // İkinci satırın başlangıç noktası, for döngüsü sayesinde bu sütun sürekli kayacaktır
-  lcd.print("TEKNOLOJI");
-  delay(300);
-  lcd.setCursor(i,1);
-  lcd.print(" ");
-}
-}*/
